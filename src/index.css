@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --color-ink: #070a12;
+  --color-surface: #101522;
+  --color-paper: #f5f7fa;
+  --color-mute: #aab2c0;
+  --color-violet: #8b7cff;
+  --color-cyan: #4de8f0;
+  --color-gold: #e8c07a;
+  --color-rose: #f4a7c3;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+html {
+  background: #070a12;
+  color: #f5f7fa;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(1200px 800px at 20% -10%, rgba(124, 108, 255, 0.16), transparent 55%),
+    radial-gradient(900px 700px at 110% 20%, rgba(77, 232, 240, 0.08), transparent 50%),
+    #070a12;
+  overflow-x: hidden;
+}
+
+body.warm {
+  background:
+    radial-gradient(1100px 700px at 15% -8%, rgba(232, 192, 122, 0.16), transparent 50%),
+    radial-gradient(900px 700px at 100% 10%, rgba(244, 167, 195, 0.12), transparent 48%),
+    radial-gradient(800px 600px at 50% 120%, rgba(124, 108, 255, 0.12), transparent 50%),
+    #070a12;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a,
+input {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid #8b7cff;
+  outline-offset: 3px;
+}
+
+.glass {
+  background: rgba(16, 21, 34, 0.62);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(245, 247, 250, 0.08);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.eq {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.reduce-motion *,
+  html.reduce-motion *::before,
+  html.reduce-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html.reduce-motion * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
