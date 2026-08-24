@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - cursor/renu-nagpal-mathverse-0c31
+      - "cursor/**"
   workflow_dispatch:
 
 permissions:
