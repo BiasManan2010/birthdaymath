@@ -4,6 +4,10 @@ An interactive, surprise-based mathematical birthday universe dedicated to **Dr.
 
 The first visit is a one-time secret mission. After the reveal, the site becomes a permanent Mathverse stored in `localStorage`.
 
+**Live now:** [Open the Mathverse](https://raw.githack.com/BiasManan2010/birthdaymath/gh-pages/index.html)
+
+The built site is also on the `gh-pages` branch. After GitHub Pages is enabled on that branch (Settings → Pages → Deploy from branch `gh-pages`), it will also be at https://biasmanan2010.github.io/birthdaymath/
+
 ## Develop
 
 ```bash
