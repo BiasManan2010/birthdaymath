@@ -11,7 +11,7 @@ export function HiddenSurprise() {
       <button
         type="button"
         aria-label="Hidden surprise"
-        className="fixed top-1/2 left-1 z-30 min-h-11 min-w-8 rounded-r-full bg-white/5 text-mute"
+        className="fixed top-1/2 left-1 z-30 min-h-11 min-w-8 rounded-r-full border border-ink text-ink"
         onClick={() => {
           const pick = teacher.hiddenFinds[Math.floor(Math.random() * teacher.hiddenFinds.length)]
           setMsg(pick)
@@ -29,8 +29,8 @@ export function HiddenSurprise() {
             className="glass fixed right-4 bottom-24 left-4 z-50 rounded-3xl p-5 md:right-auto md:bottom-10 md:left-10 md:max-w-sm"
             role="dialog"
           >
-            <p className="text-sm tracking-wide text-gold">You found something hidden. 👀</p>
-            <p className="mt-3 text-paper">{msg}</p>
+            <p className="text-sm tracking-wide">You found something hidden.</p>
+            <p className="mt-3">{msg}</p>
             <button type="button" className="mt-4 text-sm text-mute" onClick={() => setOpen(false)}>
               Close
             </button>
