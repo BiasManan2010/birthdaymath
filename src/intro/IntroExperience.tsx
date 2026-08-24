@@ -5,24 +5,11 @@ import { SymbolField } from "../components/SymbolField"
 import { useExperience } from "../context/Experience"
 import { fadeUp, transition } from "../lib/motion"
 import { BirthdayReveal } from "./BirthdayReveal"
-import { FinalEquation } from "./FinalEquation"
-import { FindTheMistake } from "./FindTheMistake"
 import { IdentityPuzzle } from "./IdentityPuzzle"
-import { MathMagic } from "./MathMagic"
-import { SystemAnalysis } from "./SystemAnalysis"
 import { SystemLoader } from "./SystemLoader"
 import { UnsolvedEquation } from "./UnsolvedEquation"
 
-const SCREENS = [
-  "loader",
-  "equation",
-  "analysis",
-  "magic",
-  "mistake",
-  "identity",
-  "final",
-  "reveal",
-] as const
+const SCREENS = ["loader", "equation", "identity", "reveal"] as const
 
 export function IntroExperience({ onEnter }: { onEnter: () => void }) {
   const { reducedMotion } = useExperience()
@@ -33,7 +20,7 @@ export function IntroExperience({ onEnter }: { onEnter: () => void }) {
 
   return (
     <div className="relative min-h-[100dvh]">
-      <SymbolField density={10} connect={screen !== "reveal"} />
+      <SymbolField density={8} connect={screen !== "reveal"} />
       <SettingsBar />
       <AnimatePresence mode="wait">
         <motion.div
@@ -45,11 +32,7 @@ export function IntroExperience({ onEnter }: { onEnter: () => void }) {
         >
           {screen === "loader" && <SystemLoader onNext={next} />}
           {screen === "equation" && <UnsolvedEquation onNext={next} />}
-          {screen === "analysis" && <SystemAnalysis onNext={next} />}
-          {screen === "magic" && <MathMagic onNext={next} />}
-          {screen === "mistake" && <FindTheMistake onNext={next} />}
           {screen === "identity" && <IdentityPuzzle onNext={next} />}
-          {screen === "final" && <FinalEquation onNext={next} />}
           {screen === "reveal" && <BirthdayReveal onEnter={onEnter} />}
         </motion.div>
       </AnimatePresence>

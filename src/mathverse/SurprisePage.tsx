@@ -5,11 +5,9 @@ import { TeacherModePage } from "./TeacherModePage"
 export function SurprisePage() {
   return (
     <div className="mx-auto max-w-2xl px-5 pt-24 pb-28">
-      <h1 className="eq text-xs tracking-[0.35em] text-gold">A LETTER</h1>
-      <article className="serif mt-6 whitespace-pre-line text-xl leading-relaxed text-paper/95">
-        {teacher.letter}
-      </article>
-      <Link to="/memories" className="mt-8 inline-block text-sm text-cyan">
+      <h1 className="eq text-xs tracking-[0.35em]">A LETTER</h1>
+      <article className="serif mt-6 whitespace-pre-line text-xl leading-relaxed">{teacher.letter}</article>
+      <Link to="/memories" className="mt-8 inline-block text-sm underline-offset-4 hover:underline">
         Visit the memory constellation →
       </Link>
       <WhyYou />
@@ -29,8 +27,7 @@ function WhyYou() {
           {line}
         </p>
       ))}
-      <p className="serif text-4xl text-gold">{teacher.title}</p>
-      <p className="text-rose">❤️</p>
+      <p className="serif text-4xl">{teacher.title}</p>
     </section>
   )
 }

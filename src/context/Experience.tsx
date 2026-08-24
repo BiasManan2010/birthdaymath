@@ -53,7 +53,7 @@ export function ExperienceProvider({ children }: { children: ReactNode }) {
     document.documentElement.classList.toggle("reduce-motion", reducedMotion)
     document.body.classList.toggle("warm", unlocked)
     document.title = unlocked
-      ? "THE MATHVERSE — Dr. Renu Nagpal"
+      ? "Happy Birthday — Dr. Renu Nagpal"
       : "Something doesn't add up"
   }, [reducedMotion, unlocked])
 

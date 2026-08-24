@@ -5,7 +5,7 @@ type Mode = "fn" | "circle" | "spiral" | "chaos"
 export function GraphCanvas({
   mode = "fn",
   fn,
-  color = "#4DE8F0",
+  color = "#141414",
   animate = true,
   className = "",
 }: {
@@ -33,7 +33,7 @@ export function GraphCanvas({
       canvas.height = h * dpr
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       ctx.clearRect(0, 0, w, h)
-      ctx.strokeStyle = "rgba(255,255,255,0.08)"
+      ctx.strokeStyle = "rgba(20,20,20,0.18)"
       ctx.lineWidth = 1
       ctx.beginPath()
       ctx.moveTo(0, h / 2)
@@ -44,7 +44,7 @@ export function GraphCanvas({
 
       const progress = animate ? Math.min(1, t / 90) : 1
       ctx.strokeStyle = color
-      ctx.lineWidth = 2
+      ctx.lineWidth = 1.25
       ctx.beginPath()
 
       if (mode === "circle") {

@@ -34,7 +34,7 @@ export function TripleTitle({ children, className = "" }: { children: ReactNode;
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] grid place-items-center bg-ink/80 px-6 text-center"
+            className="fixed inset-0 z-[70] grid place-items-center bg-cream/90 px-6 text-center"
             onClick={() => setShow(false)}
             role="dialog"
             aria-label="Secret message"
@@ -72,7 +72,7 @@ export function EasterEggs() {
       <button
         type="button"
         aria-label="Pi easter egg"
-        className={`fixed bottom-24 left-3 z-30 text-3xl text-violet/70 md:bottom-8 ${bounce ? "animate-bounce" : ""}`}
+        className={`fixed bottom-24 left-3 z-30 text-3xl text-ink md:bottom-8 ${bounce ? "animate-bounce" : ""}`}
         onClick={() => {
           const n = pi + 1
           setPi(n)
@@ -87,7 +87,7 @@ export function EasterEggs() {
       <button
         type="button"
         aria-label="Infinity portal"
-        className="fixed bottom-24 right-3 z-30 text-3xl text-cyan/70 md:bottom-8"
+        className="fixed bottom-24 right-3 z-30 text-3xl text-ink md:bottom-8"
         onPointerDown={() => {
           const t = window.setTimeout(() => setPortal(true), 450)
           const up = () => {
@@ -105,10 +105,10 @@ export function EasterEggs() {
             initial={{ opacity: 0, scale: 0.2 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] grid place-items-center bg-ink"
+            className="fixed inset-0 z-[60] grid place-items-center bg-cream"
             onClick={() => setPortal(false)}
           >
-            <div className="h-64 w-64 rounded-full bg-[conic-gradient(from_90deg,#8b7cff,#4de8f0,#e8c07a,#8b7cff)] blur-md" />
+            <div className="h-48 w-48 rounded-full border border-ink" />
             <p className="absolute serif text-3xl">A portal to more questions.</p>
           </motion.div>
         )}
@@ -117,10 +117,10 @@ export function EasterEggs() {
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] grid place-items-center bg-ink/85"
+            className="fixed inset-0 z-[60] grid place-items-center bg-cream/90"
             onClick={() => setRenu(false)}
           >
-            <p className="serif text-5xl text-gold">R E N U</p>
+            <p className="serif text-5xl">R E N U</p>
           </motion.div>
         )}
       </AnimatePresence>
