@@ -290,7 +290,7 @@ function WhichGraph() {
   const { play, markGamePlayed } = useExperience()
   const items = [
     { eq: "y = x²", correct: 0, fns: [(x: number) => x * x, (x: number) => -x * x, (x: number) => x, (x: number) => Math.sin(x)] },
-    { eq: "y = sin(x)", correct: 2, fns: [(x: number) => x * x, (x: number) => Math.abs(x), (x: number) => Math.sin(x), (x: number) => Math.cos(x) * 0 + 1.5] },
+    { eq: "y = sin(x)", correct: 2, fns: [(x: number) => x * x, (x: number) => Math.abs(x), (x: number) => Math.sin(x), (x: number) => 0.35 * x] },
   ]
   const [i, setI] = useState(0)
   const [msg, setMsg] = useState("")
