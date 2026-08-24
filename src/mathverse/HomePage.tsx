@@ -20,6 +20,9 @@ export function HomePage() {
           <ActionButton variant="ghost">READ YOUR MESSAGE</ActionButton>
         </Link>
       </div>
+      <Link to="/memories" className="mt-6 text-sm text-gold underline-offset-4 hover:underline">
+        Open the memory constellation
+      </Link>
       <p className="eq mt-10 text-sm text-mute">
         Secret Mission: Completed ✓
         {completedPuzzles.length ? ` · ${completedPuzzles.length} traces remain` : ""}

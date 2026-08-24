@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { teacher } from "../content/teacher"
 import { TeacherModePage } from "./TeacherModePage"
 
@@ -8,6 +9,9 @@ export function SurprisePage() {
       <article className="serif mt-6 whitespace-pre-line text-xl leading-relaxed text-paper/95">
         {teacher.letter}
       </article>
+      <Link to="/memories" className="mt-8 inline-block text-sm text-cyan">
+        Visit the memory constellation →
+      </Link>
       <WhyYou />
       <TeacherModePage />
     </div>
