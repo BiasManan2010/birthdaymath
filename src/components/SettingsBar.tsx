@@ -1,7 +1,7 @@
 import { useExperience } from "../context/Experience"
 
 export function SettingsBar() {
-  const { soundEnabled, setSound, reducedMotion, setReducedMotion } = useExperience()
+  const { soundEnabled, setSound, reducedMotion, setReducedMotion, play } = useExperience()
   return (
     <div className="pointer-events-auto fixed top-3 right-3 z-50 flex gap-2">
       <button
@@ -9,7 +9,11 @@ export function SettingsBar() {
         className="glass min-h-11 min-w-11 rounded-full px-3 text-xs tracking-wide text-mute"
         aria-pressed={soundEnabled}
         aria-label={soundEnabled ? "Disable sound" : "Enable sound"}
-        onClick={() => setSound(!soundEnabled)}
+        onClick={() => {
+          const next = !soundEnabled
+          setSound(next)
+          if (next) play("chime")
+        }}
       >
         {soundEnabled ? "SOUND ON" : "SOUND OFF"}
       </button>
