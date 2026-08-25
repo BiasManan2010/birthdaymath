@@ -1,8 +1,20 @@
+import { useEffect, useRef } from "react"
 import { TripleTitle } from "../components/EasterEggs"
 import { MamPortrait } from "../components/MamPortrait"
+import { useExperience } from "../context/Experience"
 import { letter, students, teacher } from "../content/teacher"
 
 export function WishPage() {
+  const { play } = useExperience()
+  const sang = useRef(false)
+
+  useEffect(() => {
+    if (sang.current) return
+    sang.current = true
+    const id = window.setTimeout(() => play("wish"), 400)
+    return () => window.clearTimeout(id)
+  }, [play])
+
   return (
     <article className="mx-auto max-w-2xl px-5 pb-24 pt-20 sm:pt-24">
       <header className="text-center">
