@@ -1,6 +1,6 @@
 # Happy Birthday, Dr. Renu Nagpal
 
-A birthday letter from **Manan Bharti · CSE B · 126030115** (Diploma Computer Science, 1st year).
+A birthday letter from **Manan Bharti · CSE B · 126030115** and **Rehaan Gulbhadar · CSE B · 126030062** (Diploma Computer Science, 1st year).
 
 Four small questions spell **RENU**. Then a long letter.
 
