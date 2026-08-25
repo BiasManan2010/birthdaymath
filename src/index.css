@@ -4,14 +4,15 @@
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --color-ink: #070a12;
-  --color-surface: #101522;
-  --color-paper: #f5f7fa;
-  --color-mute: #aab2c0;
-  --color-violet: #8b7cff;
-  --color-cyan: #4de8f0;
-  --color-gold: #e8c07a;
-  --color-rose: #f4a7c3;
+  --color-ink: #141414;
+  --color-surface: #f3eee4;
+  --color-paper: #141414;
+  --color-mute: #6a645a;
+  --color-violet: #141414;
+  --color-cyan: #141414;
+  --color-gold: #141414;
+  --color-rose: #141414;
+  --color-cream: #f3eee4;
 }
 
 html,
@@ -22,26 +23,28 @@ body,
 }
 
 html {
-  background: #070a12;
-  color: #f5f7fa;
+  background: #f3eee4;
+  color: #141414;
 }
 
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background:
-    radial-gradient(1200px 800px at 20% -10%, rgba(124, 108, 255, 0.16), transparent 55%),
-    radial-gradient(900px 700px at 110% 20%, rgba(77, 232, 240, 0.08), transparent 50%),
-    #070a12;
+  color: #141414;
+  background-color: #f3eee4;
+  background-image:
+    linear-gradient(to right, rgba(20, 20, 20, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 20, 20, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
   overflow-x: hidden;
 }
 
 body.warm {
-  background:
-    radial-gradient(1100px 700px at 15% -8%, rgba(232, 192, 122, 0.16), transparent 50%),
-    radial-gradient(900px 700px at 100% 10%, rgba(244, 167, 195, 0.12), transparent 48%),
-    radial-gradient(800px 600px at 50% 120%, rgba(124, 108, 255, 0.12), transparent 50%),
-    #070a12;
+  background-color: #f3eee4;
+  background-image:
+    linear-gradient(to right, rgba(20, 20, 20, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 20, 20, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 * {
@@ -55,18 +58,15 @@ input {
 }
 
 :focus-visible {
-  outline: 2px solid #8b7cff;
+  outline: 1px solid #141414;
   outline-offset: 3px;
 }
 
 .glass {
-  background: rgba(16, 21, 34, 0.62);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(245, 247, 250, 0.08);
-  box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  background: transparent;
+  border: 1px solid #141414;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .eq {

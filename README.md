@@ -1,6 +1,6 @@
 # The Renu Nagpal Mathverse
 
-An interactive, surprise-based mathematical birthday universe dedicated to **Dr. Renu Nagpal** (25 August 2026).
+An interactive, surprise-based mathematical birthday universe dedicated to **Dr. Renu Nagpal** (25 August 2026), from **Manan Bharti · CSE B · 126030115**.
 
 The first visit is a one-time secret mission. After the reveal, the site becomes a permanent Mathverse stored in `localStorage`.
 
