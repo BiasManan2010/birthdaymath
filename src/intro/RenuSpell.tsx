@@ -169,7 +169,7 @@ export function RenuSpell({ onNext }: { onNext: () => void }) {
                   <p className="serif mt-6 text-4xl italic sm:text-5xl">Dr. Renu Nagpal</p>
                   <p className="mt-5 text-mute">The name was always there. Waiting to be solved.</p>
                   <ActionButton className="mt-8" onClick={onNext}>
-                    OPEN THE NOTE →
+                    READ YOUR LETTER →
                   </ActionButton>
                 </motion.div>
               )}
