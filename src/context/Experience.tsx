@@ -52,9 +52,7 @@ export function ExperienceProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     document.documentElement.classList.toggle("reduce-motion", reducedMotion)
     document.body.classList.toggle("warm", unlocked)
-    document.title = unlocked
-      ? "Happy Birthday — Dr. Renu Nagpal"
-      : "Something doesn't add up"
+    document.title = unlocked ? "Happy Birthday — Dr. Renu Nagpal" : "Four numbers · one name"
   }, [reducedMotion, unlocked])
 
   const unlock = useCallback(() => {
