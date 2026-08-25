@@ -1,4 +1,5 @@
 import { TripleTitle } from "../components/EasterEggs"
+import { MamPortrait } from "../components/MamPortrait"
 import { letter, student, teacher } from "../content/teacher"
 
 export function WishPage() {
@@ -6,8 +7,8 @@ export function WishPage() {
     <article className="mx-auto max-w-2xl px-5 pb-24 pt-20 sm:pt-24">
       <header className="text-center">
         <p className="eq text-[11px] tracking-[0.35em] text-mute">{teacher.date}</p>
-        <p className="serif mt-6 text-[12vw] leading-none sm:text-8xl">∞</p>
-        <TripleTitle className="serif mt-2 text-5xl leading-tight sm:text-7xl">Happy Birthday</TripleTitle>
+        <MamPortrait className="mt-8" />
+        <TripleTitle className="serif mt-8 text-5xl leading-tight sm:text-7xl">Happy Birthday</TripleTitle>
         <p className="serif mt-4 text-3xl italic sm:text-4xl">{teacher.title}</p>
         <p className="eq mt-6 text-xs tracking-[0.2em] text-mute">
           {student.name} · {student.section} · {student.roll}
