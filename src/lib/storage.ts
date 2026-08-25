@@ -67,7 +67,7 @@ export function setHighScore(game: string, score: number) {
 }
 
 export function getSoundEnabled() {
-  return read(KEYS.sound) === "true"
+  return read(KEYS.sound) !== "false"
 }
 
 export function setSoundEnabled(value: boolean) {

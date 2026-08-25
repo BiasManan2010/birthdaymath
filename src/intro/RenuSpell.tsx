@@ -58,6 +58,7 @@ export function RenuSpell({ onNext }: { onNext: () => void }) {
 
   function accept(n: number) {
     if (n !== clue.a) {
+      play("wrong")
       setWrong(true)
       window.setTimeout(() => setWrong(false), 420)
       return
@@ -69,7 +70,10 @@ export function RenuSpell({ onNext }: { onNext: () => void }) {
     setTyped("")
     markPuzzle(`letter-${clue.letter}`)
     if (next.length === 4) {
-      window.setTimeout(() => setNamed(true), reducedMotion ? 0 : 700)
+      window.setTimeout(() => {
+        play("unlock")
+        setNamed(true)
+      }, reducedMotion ? 0 : 700)
     } else {
       setI((v) => v + 1)
     }
@@ -129,7 +133,10 @@ export function RenuSpell({ onNext }: { onNext: () => void }) {
                   <button
                     key={n}
                     type="button"
-                    onClick={() => accept(n)}
+                    onClick={() => {
+                      play("click")
+                      accept(n)
+                    }}
                     className="glass min-h-16 rounded-none text-2xl"
                   >
                     {n}
@@ -184,6 +191,7 @@ export function RenuSpell({ onNext }: { onNext: () => void }) {
 }
 
 function Keypad({ onDigit, onDelete }: { onDigit: (d: string) => void; onDelete: () => void }) {
+  const { play } = useExperience()
   const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
   return (
     <div className="mx-auto mt-5 grid w-56 grid-cols-3 gap-2">
@@ -191,17 +199,35 @@ function Keypad({ onDigit, onDelete }: { onDigit: (d: string) => void; onDelete:
         <button
           key={k}
           type="button"
-          onClick={() => onDigit(k)}
+          onClick={() => {
+            play("click")
+            onDigit(k)
+          }}
           className="glass min-h-12 rounded-none text-lg"
         >
           {k}
         </button>
       ))}
       <span />
-      <button type="button" onClick={() => onDigit("0")} className="glass min-h-12 rounded-none text-lg">
+      <button
+        type="button"
+        onClick={() => {
+          play("click")
+          onDigit("0")
+        }}
+        className="glass min-h-12 rounded-none text-lg"
+      >
         0
       </button>
-      <button type="button" onClick={onDelete} className="min-h-12 text-sm text-mute" aria-label="Delete">
+      <button
+        type="button"
+        onClick={() => {
+          play("click")
+          onDelete()
+        }}
+        className="min-h-12 text-sm text-mute"
+        aria-label="Delete"
+      >
         ⌫
       </button>
     </div>
