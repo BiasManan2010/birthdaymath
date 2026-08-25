@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
 import { ActionButton } from "../components/ActionButton"
+import { MamPortrait } from "../components/MamPortrait"
 import { useExperience } from "../context/Experience"
 import { transition } from "../lib/motion"
 
@@ -166,10 +167,11 @@ export function RenuSpell({ onNext }: { onNext: () => void }) {
               {named && (
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
                   <p className="eq mt-3 tracking-[0.35em] text-mute">N A G P A L</p>
+                  <MamPortrait size="sm" className="mt-6" />
                   <p className="serif mt-6 text-4xl italic sm:text-5xl">Dr. Renu Nagpal</p>
                   <p className="mt-5 text-mute">The name was always there. Waiting to be solved.</p>
                   <ActionButton className="mt-8" onClick={onNext}>
-                    OPEN THE NOTE →
+                    READ YOUR LETTER →
                   </ActionButton>
                 </motion.div>
               )}
