@@ -18,7 +18,7 @@ export function MathLabPage() {
   const [tab, setTab] = useState<Tab>("equation")
   return (
     <div className="mx-auto max-w-5xl px-4 pt-24 pb-28 md:pt-28">
-      <h1 className="eq text-xs tracking-[0.35em] text-cyan">MATH LAB</h1>
+      <h1 className="eq text-xs tracking-[0.35em]">MATH LAB</h1>
       <p className="mt-2 text-2xl">A playground for curious minds.</p>
       <div className="mt-5 flex gap-2 overflow-x-auto">
         {(
@@ -32,7 +32,7 @@ export function MathLabPage() {
             key={id}
             type="button"
             onClick={() => setTab(id)}
-            className={`min-h-11 rounded-full px-4 text-sm ${tab === id ? "bg-white/12" : "glass text-mute"}`}
+            className={`min-h-11 rounded-full px-4 text-sm ${tab === id ? "border border-ink" : "glass text-mute"}`}
           >
             {label}
           </button>
@@ -84,7 +84,7 @@ function EquationPlayground() {
           setExpr(e.target.value)
           setMode("fn")
         }}
-        className="eq glass mt-2 h-12 w-full rounded-2xl px-4"
+        className="eq glass mt-2 h-12 w-full rounded-none px-4"
       />
       <div className="mt-4 grid gap-3">
         {[
@@ -107,7 +107,7 @@ function EquationPlayground() {
           </label>
         ))}
       </div>
-      <div className="glass mt-5 h-72 overflow-hidden rounded-3xl">
+      <div className="glass mt-5 h-72 overflow-hidden rounded-none">
         <GraphCanvas mode={mode} fn={fn} />
       </div>
     </div>
@@ -135,29 +135,31 @@ function GeometryLab() {
     <div className="mt-6">
       <svg
         viewBox="0 0 320 260"
-        className="glass w-full rounded-3xl"
+        className="glass w-full rounded-none"
         onPointerMove={(e) => move(e.clientX, e.clientY, e.currentTarget)}
         onPointerUp={() => setDrag(null)}
         onPointerLeave={() => setDrag(null)}
       >
         <polygon
           points={`${pts.A.x},${pts.A.y} ${pts.B.x},${pts.B.y} ${pts.C.x},${pts.C.y}`}
-          fill="rgba(139,124,255,0.12)"
-          stroke="#8b7cff"
+          fill="none"
+          stroke="#141414"
+          strokeWidth="1.25"
         />
         {(["A", "B", "C"] as const).map((k) => (
           <g key={k}>
             <circle
               cx={pts[k].x}
               cy={pts[k].y}
-              r="14"
-              fill="#4DE8F0"
+              r="12"
+              fill="#f3eee4"
+              stroke="#141414"
               onPointerDown={(e) => {
                 e.currentTarget.setPointerCapture(e.pointerId)
                 setDrag(k)
               }}
             />
-            <text x={pts[k].x} y={pts[k].y - 18} textAnchor="middle" fill="#F5F7FA" fontSize="14">
+            <text x={pts[k].x} y={pts[k].y - 18} textAnchor="middle" fill="#141414" fontSize="14">
               {k}
             </text>
           </g>
@@ -175,7 +177,7 @@ function GeometryLab() {
       </div>
       <button
         type="button"
-        className="mt-4 min-h-12 rounded-full bg-white/10 px-5"
+        className="mt-4 min-h-12 rounded-full border border-ink px-5"
         onClick={() =>
           setPts({
             A: { x: 40 + Math.random() * 240, y: 20 + Math.random() * 80 },
@@ -214,8 +216,8 @@ function GraphUniverse() {
           </button>
         ))}
       </div>
-      <div className="h-[55vh] overflow-hidden rounded-3xl border border-white/8">
-        <GraphCanvas key={preset} mode={mode} fn={fn} color="#E8C07A" />
+      <div className="h-[55vh] overflow-hidden rounded-none border border-ink">
+        <GraphCanvas key={preset} mode={mode} fn={fn} color="#141414" />
       </div>
     </div>
   )

@@ -77,7 +77,7 @@ export function SymbolField({ density = 16, connect = true }: { density?: number
               y1={`${a.y}%`}
               x2={`${b.x}%`}
               y2={`${b.y}%`}
-              stroke="rgba(139,124,255,0.18)"
+              stroke="rgba(20,20,20,0.2)"
               strokeWidth="1"
             />
           ))}
@@ -85,7 +85,7 @@ export function SymbolField({ density = 16, connect = true }: { density?: number
       {nodes.map((n) => (
         <span
           key={n.id}
-          className="absolute text-lg text-violet/35 eq"
+          className="absolute text-lg text-ink/25 eq"
           style={{ left: `${n.x}%`, top: `${n.y}%`, transform: "translate(-50%, -50%)" }}
         >
           {n.g}
@@ -97,7 +97,7 @@ export function SymbolField({ density = 16, connect = true }: { density?: number
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.35, scale: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 grid place-items-center text-[28vw] font-semibold text-violet"
+            className="absolute inset-0 grid place-items-center text-[28vw] font-semibold text-ink/15"
           >
             {letter}
           </motion.div>

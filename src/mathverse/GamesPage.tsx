@@ -10,8 +10,8 @@ export function GamesPage() {
   if (game === "hub") {
     return (
       <div className="mx-auto max-w-lg px-5 pt-24 pb-28">
-        <h1 className="eq text-xs tracking-[0.35em] text-cyan">PLAY</h1>
-        <p className="mt-2 mb-6 text-2xl">Small games. Big dopamine.</p>
+        <h1 className="eq text-xs tracking-[0.35em]">PLAY</h1>
+        <p className="mt-2 mb-6 text-2xl">A few small games.</p>
         {(
           [
             ["mental", "Mental Math Rush"],
@@ -49,7 +49,7 @@ export function GamesPage() {
 
 function MentalMath() {
   const { recordScore, markGamePlayed, play, highScores } = useExperience()
-  const [time, setTime] = useState(30)
+  const [time, setTime] = useState(15)
   const [score, setScore] = useState(0)
   const [q, setQ] = useState(() => makeQ(0))
   const [val, setVal] = useState("")
@@ -79,12 +79,12 @@ function MentalMath() {
 
   return (
     <div className="text-center">
-      <p className="eq text-cyan">{live ? `${time}s` : "30-second rush"}</p>
+      <p className="eq">{live ? `${time}s` : "15-second rush"}</p>
       <p className="mt-2 serif text-4xl">{live && !done ? q.q : "Mental Math Rush"}</p>
       {live && !done && (
         <>
           <input
-            className="eq glass mt-6 h-14 w-40 rounded-2xl text-center text-2xl"
+            className="eq glass mt-6 h-14 w-40 rounded-none text-center text-2xl"
             value={val}
             inputMode="numeric"
             onChange={(e) => setVal(e.target.value)}
@@ -136,14 +136,6 @@ function MistakeGame() {
         steps: ["x + 5 = 12", "x = 12 + 5", "x = 17"],
         wrong: 1,
       },
-      {
-        steps: ["3(x + 2) = 12", "3x + 2 = 12", "3x = 10"],
-        wrong: 1,
-      },
-      {
-        steps: ["(x²)' = 2x", "(x³)' = 3x", "(x³)' = 3x²"],
-        wrong: 1,
-      },
     ],
     [],
   )
@@ -158,7 +150,7 @@ function MistakeGame() {
         <button
           key={s}
           type="button"
-          className="eq glass mb-2 min-h-12 w-full rounded-2xl px-4 text-left"
+          className="eq glass mb-2 min-h-12 w-full rounded-none px-4 text-left"
           onClick={() => {
             if (idx === p.wrong) {
               play("correct")
@@ -185,7 +177,6 @@ function EquationEscape() {
   const locks = [
     { q: "x − 4 = 9", a: 13 },
     { q: "2x + 1 = 11", a: 5 },
-    { q: "√81", a: 9 },
   ]
   const [i, setI] = useState(0)
   const [val, setVal] = useState("")
@@ -193,18 +184,18 @@ function EquationEscape() {
 
   return (
     <div className="text-center">
-      <div className="mx-auto mb-6 grid h-48 w-40 grid-rows-3 overflow-hidden rounded-[28px] border border-gold/40">
+      <div className="mx-auto mb-6 grid h-40 w-36 grid-rows-2 overflow-hidden rounded-none border border-ink">
         {locks.map((_, idx) => (
-          <div key={idx} className={`border-b border-gold/20 ${idx < i ? "bg-gold/30" : "bg-ink"}`} />
+          <div key={idx} className={`border-b border-ink ${idx < i ? "bg-ink/10" : "bg-transparent"}`} />
         ))}
       </div>
       {open ? (
-        <p className="text-2xl text-gold">DOOR UNLOCKED</p>
+        <p className="text-2xl">DOOR UNLOCKED</p>
       ) : (
         <>
           <p className="eq text-2xl">{locks[i].q}</p>
           <input
-            className="eq glass mt-4 h-12 w-32 rounded-2xl text-center"
+            className="eq glass mt-4 h-12 w-32 rounded-none text-center"
             value={val}
             inputMode="numeric"
             aria-label="Lock answer"
@@ -251,7 +242,7 @@ function NumberMemory() {
       {!show && (
         <>
           <input
-            className="eq glass mt-6 h-12 w-56 rounded-2xl text-center"
+            className="eq glass mt-6 h-12 w-56 rounded-none text-center"
             value={val}
             onChange={(e) => setVal(e.target.value)}
             aria-label="Sequence"
@@ -290,7 +281,6 @@ function WhichGraph() {
   const { play, markGamePlayed } = useExperience()
   const items = [
     { eq: "y = x²", correct: 0, fns: [(x: number) => x * x, (x: number) => -x * x, (x: number) => x, (x: number) => Math.sin(x)] },
-    { eq: "y = sin(x)", correct: 2, fns: [(x: number) => x * x, (x: number) => Math.abs(x), (x: number) => Math.sin(x), (x: number) => 0.35 * x] },
   ]
   const [i, setI] = useState(0)
   const [msg, setMsg] = useState("")
@@ -303,7 +293,7 @@ function WhichGraph() {
           <button
             key={idx}
             type="button"
-            className="glass h-28 overflow-hidden rounded-2xl"
+            className="glass h-28 overflow-hidden rounded-none"
             onClick={() => {
               if (idx === item.correct) {
                 play("correct")
