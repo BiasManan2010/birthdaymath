@@ -10,3 +10,5 @@ Edit the letter in `src/content/teacher.ts`.
 npm install
 npm run dev
 ```
+
+Deploy on **Vercel from the `main` branch**. Do not set the production branch to `gh-pages` — that folder is only the built files, so `npm run build` fails there (exit 254).
